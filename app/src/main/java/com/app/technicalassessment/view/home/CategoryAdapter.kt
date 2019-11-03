@@ -25,6 +25,7 @@ class CategoryAdapter(val items: ArrayList<Category>, val context: Context)
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: Category) {
             with(itemView) {
+                tv_catg_title.text = item.name
                 rv_products.layoutManager =
                     LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 rv_products.adapter = ProductListAdapter(ArrayList(item.products), context)
